@@ -47,7 +47,7 @@ class _InputPageState extends State<InputPage> {
                         : kInactiveCardColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.mars,
-                      label: 'Male',
+                      label: 'MALE',
                     ),
                   ),
                 ),
@@ -63,7 +63,7 @@ class _InputPageState extends State<InputPage> {
                         : kInactiveCardColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.venus,
-                      label: 'Female',
+                      label: 'FEMALE',
                     ),
                   ),
                 ),
@@ -77,7 +77,7 @@ class _InputPageState extends State<InputPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Height',
+                    'HEIGHT',
                     style: kLabelTextStyle,
                   ),
                   Row(
@@ -217,9 +217,11 @@ class _InputPageState extends State<InputPage> {
                   MaterialPageRoute(builder: (context) => ResultsPage()));
             },
             child: Container(
-              child: Text(
-                'CALCULATE',
-                style: kLabelTextStyle,
+              child: Center(
+                child: Text(
+                  'CALCULATE YOUR BMI',
+                  style: kLargeButtonTextStyle,
+                ),
               ),
               color: kBottomContainerColor,
               margin: EdgeInsets.only(top: 5.0),
