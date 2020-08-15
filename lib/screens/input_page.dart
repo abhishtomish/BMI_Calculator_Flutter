@@ -1,11 +1,13 @@
+import 'package:bmi_calculator/components/bottom_button.dart';
+import 'package:bmi_calculator/components/icon_content.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/components/rounded_icon.dart';
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'constants.dart';
-import 'icon_content.dart';
 import 'results_page.dart';
-import 'reusable_card.dart';
 
 bool activeMale = false;
 bool activeFemale = false;
@@ -211,48 +213,19 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
+          BottomButton(
+            buttonTitle: 'CALCULATE',
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ResultsPage()));
-            },
-            child: Container(
-              child: Center(
-                child: Text(
-                  'CALCULATE YOUR BMI',
-                  style: kLargeButtonTextStyle,
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultsPage(),
                 ),
-              ),
-              color: kBottomContainerColor,
-              margin: EdgeInsets.only(top: 5.0),
-              width: double.infinity,
-              height: kBottomContainerHeight,
-            ),
+              );
+            },
           ),
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon, @required this.onPressed});
-
-  final IconData icon;
-  final Function onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPressed,
-      elevation: 6.0,
-      constraints: BoxConstraints.tightFor(
-        width: 40.0,
-        height: 40.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4F5E),
     );
   }
 }
