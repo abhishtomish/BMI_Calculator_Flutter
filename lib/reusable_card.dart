@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const boarderRadius = 10.0;
-const margins = 15.0;
+const margins = 5.0;
 
 class ReusableCard extends StatelessWidget {
   ReusableCard({@required this.colour, this.cardChild, this.onPress});
